@@ -31,11 +31,19 @@ void change_right_2(studnet1 *p_s)
 int main()
 {
  student1 s = {"x", 20}; 
+ change.w(s);
+ change_r1(&s);
+ change_r2(&s);
 }
 ```
 
 | address | contents|
 |:------|-----:|
+| 32 | 'x', '\0', 0, 0 // c_w |
 | 36 | |
 | 40 | |
 | 44 | 'x', '\0', .., ... //main: s |
+| 48 | 20 //s.age |
+
+
+

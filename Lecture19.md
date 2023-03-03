@@ -49,7 +49,30 @@ to include certain header files with program
 * edit json file
 
 
+## how do you define something similar in python?
 
+```python
+class student:   # don't need to specifiy types or fields
+  def __init__(self, name, age):
+   self.name = name
+   self.age = age
+   
+  def __str__(self):
+   return self.name + " is " + str(self.age) + " years old"
+   
+  
+if __name__ == '__main__':
+ s = student("John", 20)
+ s.ESC190mark = 100 # now the ESC190mark for student s is 100
+ print(s.ESC190mark)  # print 100
+ print(s) # print "John is 20 years old"
+ 
+ a = 56;
+ 
+ # you can add an attribute whenever you want
+ f.a178923 = 100 # now the a178923 for function f is 100
+ 
+```
 
  
 

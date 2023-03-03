@@ -45,6 +45,8 @@ gcc arraylist.c
 gcc -lm main.c
 ```
 
+to include certain header files with program
+* edit json file
 
 
 

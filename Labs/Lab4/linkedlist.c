@@ -113,6 +113,8 @@ int LL_get(LL *my_list, int index)
 }
 
 
+// generic wrappers for all the functions
+
 void create_list_from_data(void **p_list, int *data_arr, int size)
 {
     create_LL_from_data((LL**)p_list, data_arr, size);   

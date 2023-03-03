@@ -1,4 +1,4 @@
-# Lecture 20: Abstract Data Types
+# Lecture 19: Abstract Data Types
 * Any colection of values toegther with operations on those values
   * int with operations '+', '*';
   * lists with operations insert and remove
@@ -32,6 +32,20 @@ if(array[index] == NULL){
   return
 }
 ```
+
+## review of last lab
+* take a look at the corresponding lab files in lab5 folder: list.h, linekdlist.c, and main.c
+* to compile all of them you can first compile linkedlist.c in the termindal (gcc main.c linkedlist.o)
+
+```txt
+gcc main.c linkedlist.o
+
+gcc arraylist.c
+
+gcc -lm main.c
+```
+
+
 
 
 

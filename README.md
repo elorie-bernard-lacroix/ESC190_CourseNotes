@@ -30,6 +30,9 @@ comment
 | double   | %lf | double-precision floating-point value |
 | void      |      | the absence of the type |
 
+Type casting:
+`(type_name) expression` 
+
 ### Arrays
 ```C
 data_type array_name[array_size];  // declaration
@@ -55,6 +58,22 @@ functions:
 * accept input: `scanf("format_specifier", &assigned_variable)`
 
 ## File Handling
+
+## Memory Allocation
+Basic primitive variables:
+* to allocate `int a = 42` in memory, it will choose an address (e.g. 3040) for that variable, when we change variable it will look for the variable, a, in memory and change the value in that location
+
+Pointers: Used to store the address of variables (convention: p_a)
+* `&`: gets address of a variable
+* `*[variable type]`: pointer type, depending on variable type 
+```C
+int a = 42;
+int* p_a = &a; // & is the "address-of" operator
+               // int* is the type "address of int"
+printf("%p", p_a); // will print pointer
+printf("%ld\n", (long int)p_a); // can also cast it as a long int
+printf("%d", *p_a); // will print int (because of the dereferencing operator *)
+```
 
 ## Data Structures
 

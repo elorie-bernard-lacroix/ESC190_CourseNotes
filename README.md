@@ -21,6 +21,14 @@ comment
 */
 ```
 
+### Functions
+`return_type function_name(parameter variable_name)
+{
+  //code
+  return [value that matches return_type]
+}`
+Note: when using input parameters, teh function will make a copy of them (and therefore uses a local reference frame). If we want to change the original variable, we use its pointer as a parameter and reference the value through the pointer.
+
 ### Data Types
 | Type      | Format Specifier | Description |
 | ----------- | ----------- | --------- |
@@ -57,15 +65,17 @@ functions:
 * print: `printf("Print something")`
 * accept input: `scanf("format_specifier", &assigned_variable)`
 
-## File Handling
+### File Handling
+
 
 ## Memory Allocation
 Basic primitive variables:
 * to allocate `int a = 42` in memory, it will choose an address (e.g. 3040) for that variable, when we change variable it will look for the variable, a, in memory and change the value in that location
 
-Pointers: Used to store the address of variables (convention: p_a)
+### Pointers
+Used to store the address of variables (convention: p_a)
 * `&`: gets address of a variable
-* `*[variable type]`: pointer type, depending on variable type 
+* `*[variable type it is pointer to]`: pointer type, depending on variable type it points to 
 ```C
 int a = 42;
 int* p_a = &a; // & is the "address-of" operator
@@ -74,6 +84,8 @@ printf("%p", p_a); // will print pointer
 printf("%ld\n", (long int)p_a); // can also cast it as a long int
 printf("%d", *p_a); // will print int (because of the dereferencing operator *)
 ```
+
+Void pointers: We use void pointers to overcome the issue of assigning separate values to different data types in a program. The pointer to void can be used in generic functions in C because it is capable of pointing to any data type.
 
 ## Data Structures
 

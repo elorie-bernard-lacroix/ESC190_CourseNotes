@@ -22,11 +22,13 @@ comment
 ```
 
 ### Functions
-`return_type function_name(parameter variable_name)
+```C
+return_type function_name(parameter variable_name)
 {
   //code
   return [value that matches return_type]
-}`
+}
+```
 Note: when using input parameters, teh function will make a copy of them (and therefore uses a local reference frame). If we want to change the original variable, we use its pointer as a parameter and reference the value through the pointer.
 
 ### Data Types
@@ -53,6 +55,12 @@ Applications:
 
 ### Strings
 1D character array terminated by a null character ('\0) -- `char str_name[size]`
+* using double quotes will automatically include the null character at the end
+* the variable name is stored elsewhere and is equal to the address of the first character
+
+### Strings and characters in binary
+* if you cast a char to an int (i.e. `(int)'x'`) it will give the ASCII code (120) -- each character takes up 8 bites
+* 
 
 functions:
 * calculate length of string: `strlen(string_name)`

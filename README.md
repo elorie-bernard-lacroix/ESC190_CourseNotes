@@ -45,8 +45,9 @@ Type casting:
 
 ### Arrays
 ```C
-data_type array_name[array_size];  // declaration
+data_type array_name[array_size] = {e1, e2, e3, ...};  // declaration (second part isn't necessary though), must specify size (not dynamic like python)
 data_type variable_name = array[index]  // accessing an element 
+data_type variable_name = *(array+1)  // another way to access an element (but keep in mind that pointer arithmetic is concious of type of pointer so it will add 1x8 bytes in this case)
 ```
 Applications:
 * strings
@@ -54,15 +55,23 @@ Applications:
 * linked lists
 
 ### Strings
-1D character array terminated by a null character ('\0) -- `char str_name[size]`
-* using double quotes will automatically include the null character at the end
-* the variable name is stored elsewhere and is equal to the address of the first character
+1D character array terminated by a null character ('\0) -- `char str_name[num characters + 1]`
+* the code below shows ways to initialize it (using double quotes will automatically include the null character at the end)
 
-### Strings and characters in binary
+```C
+  char arr1[4] = "uvw";
+  char arr2[] = {'x', 'y', 'z', '\0'}; // you can choose whether or not you want to specify size in this case
+  char arr3[3] = {'a', 'b', 'c'}; // Incorrect, will produce weird results bc there is no null character
+  printf("%s\n", arr1); // uvw
+  printf("%s\n", arr2); // xyz
+  printf("%s\n", arr3); // something weird! 
+```
+* memory: the variable name is stored elsewhere and is equal to the address of the first character
+
+#### Strings and characters in binary
 * if you cast a char to an int (i.e. `(int)'x'`) it will give the ASCII code (120) -- each character takes up 8 bites
-* 
 
-functions:
+### Functions
 * calculate length of string: `strlen(string_name)`
 * copy the content of second string int to the first string passed to it: `strcpy(destination, source)`
 * concatenate two strings: `strcat(first_string, second_string)`
@@ -79,6 +88,13 @@ functions:
 ## Memory Allocation
 Basic primitive variables:
 * to allocate `int a = 42` in memory, it will choose an address (e.g. 3040) for that variable, when we change variable it will look for the variable, a, in memory and change the value in that location
+* we can also use the malloc function to allocate space and then free the memory
+```C 
+int *a = (int *)malloc(sizeof(int) * 12);
+\\ do something with the space
+free(a);
+```
+* you can modify arrays (that includes strings) within functions because when you write arr[4] you are referencing the address first
 
 ### Pointers
 Used to store the address of variables (convention: p_a)
@@ -100,8 +116,8 @@ Note on style: it is standard practice to write it as `int *p_a` instead of `int
 Pointer Arithmetic: 
 ```C
 char *str = "hello";
-printf(%c\n", str[1]);
-printf("%c\n", *(str + 1));
+printf(%c\n", str[1]);  // will print e (one index after h)
+printf("%c\n", *(str + 1));  // will print e (one index after h)
 ```
 
 ## Data Structures

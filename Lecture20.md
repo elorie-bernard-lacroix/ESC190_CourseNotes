@@ -34,8 +34,51 @@ int b = 1 + a++; // the value of the expression is a (b is now 7)
 
 ```
 
-Precedence and Associativity
+## Precedence and Associativity
 ![image](https://user-images.githubusercontent.com/67354651/223187675-ff8d44c0-8287-44dd-a699-03f78d5d788b.png)
 ![image](https://user-images.githubusercontent.com/67354651/223187810-86c8043d-9bb7-4f8c-b54a-b46d3c100980.png)
 
+## structs in python
+```Python
+class Student:
+  # constructor
+  def __init __(self, name, age):
+    self.name = name
+    self.age = age
+   
+  def __str__(self):
+    return "Name: " + self.name + ", Age: " + str(self.age)
+    
+  def __lt__(self, other):
+    return self.age < other.age:
+      return True
+     elif self.age > other.age:
+      return False
+     else:
+      return self.name < other.name
+  
+ def f():
+  return 42
+ 
+ s = Student("Jake", 20)
+ s.blah = 42
+ print(s)  # will print "Name: Jake, Age: 20"
+ 
+```
 
+* you can use the functions instead of using the operator
+`s1.__lt__(s2)`
+`Student.__lt__(s1, s2)`
+
+## using .sort
+```C
+student_list = [Student("Jake", 20), Student("John", 20), Student("Jane", 21)]
+student_list.sort()
+
+def get_name(s):
+  return s.name
+  
+student_list.sort(key=get_name) # sort lexicographically by name
+student_list.sort(key=lambda s: s.name) # same as above
+```
+* writing lrt is like using qsort

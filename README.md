@@ -67,6 +67,29 @@ Applications:
   printf("%s\n", arr3); // something weird! 
 ```
 * memory: the variable name is stored elsewhere and is equal to the address of the first character
+* memory can also be edited differently depending on how it is defined (if you don't define it as an array, it is immutable)
+
+```C
+  // Defining string using address of character
+  char *str = "abc";
+  // not allowed to go str[1] = 'x';
+  printf("%c\n", str[1]); // allowed to print str[1]
+  printf("%zu\n", sizeof(str)); // 8 (since pointers are long ints)
+
+  // Defining string using array
+  char str2[] = "abc"; // alternatively char str2[] = {'a','b','c','\0'};
+  str2[0] = 'x'; // fine
+  printf("%s\n", str2); // xbc
+  printf("%zu\n", sizeof(str2)); // 4 ({'a','b','c','\0'} takes up 4 bytes)
+  
+  // Defining using malloc
+  char *str3 = (char *)malloc(3*sizeof(char)); // same as malloc(3)
+  str3[0] = 'b';
+  str3[1] = '\0';
+  printf("%s\n", str3); // b
+  free(str3); // frees memory
+  
+```
 
 #### Strings and characters in binary
 * if you cast a char to an int (i.e. `(int)'x'`) it will give the ASCII code (120) -- each character takes up 8 bites
@@ -100,6 +123,7 @@ free(a);
 Used to store the address of variables (convention: p_a)
 * `&`: gets address of a variable
 * `*[variable type it is pointer to]`: pointer type, depending on variable type it points to 
+* we can initialize pointers with the malloc function or using the address of a preexisting variable
 ```C
 int a = 42;
 int* p_a = &a; // & is the "address-of" operator

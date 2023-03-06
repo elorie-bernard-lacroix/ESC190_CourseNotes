@@ -95,6 +95,15 @@ printf("%d", *p_a); // will print int (because of the dereferencing operator *)
 
 Void pointers: We use void pointers to overcome the issue of assigning separate values to different data types in a program. The pointer to void can be used in generic functions in C because it is capable of pointing to any data type.
 
+Note on style: it is standard practice to write it as `int *p_a` instead of `int* p_a` but functionally, there is no difference
+
+Pointer Arithmetic: 
+```C
+char *str = "hello";
+printf(%c\n", str[1]);
+printf("%c\n", *(str + 1));
+```
+
 ## Data Structures
 
 ## Structures

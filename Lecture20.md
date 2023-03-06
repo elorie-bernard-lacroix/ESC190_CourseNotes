@@ -1,4 +1,5 @@
-What to expect on midterm
+# Lecture 20
+## What to expect on midterm
 * problem-solving midterm, kind of thing we would practice in the lab
 * small details of C were removed
 * will mostly see that it is a lot like a lab but you have to write it on paper
@@ -32,3 +33,9 @@ int b = 1 + a++; // the value of the expression is a (b is now 7)
 
 
 ```
+
+Precedence and Associativity
+![image](https://user-images.githubusercontent.com/67354651/223187675-ff8d44c0-8287-44dd-a699-03f78d5d788b.png)
+![image](https://user-images.githubusercontent.com/67354651/223187810-86c8043d-9bb7-4f8c-b54a-b46d3c100980.png)
+
+

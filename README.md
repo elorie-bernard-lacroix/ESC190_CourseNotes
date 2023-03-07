@@ -186,7 +186,7 @@ dataType member2;
 
 typedef keyword
 typedef function allows users to provide alternative names for the primitive and user-defined data types.
-````C
+```C
 typedef struct structureName 
 {
 dataType member1;

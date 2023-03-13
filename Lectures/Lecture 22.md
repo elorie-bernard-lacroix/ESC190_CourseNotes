@@ -89,7 +89,6 @@ import linkedlist
 class LLQueue:
   def __init__(self):
     self.data = linkedlist.LinkedList()
-    slef.tail = None
     # we added the tail to the LL, so that when it is initialized and every time we append, the tail is updated
     
   def dequeue(self):
@@ -97,5 +96,6 @@ class LLQueue:
     self.data.head = self.data.head.next 
     
   def enqueue(self): 
-    self.data.append(item) # O(n), because you need to iterate through the list -- based on code in LL, but we can do better
+    self.data.append(item) # O(n), because you need to iterate through the list -- based on code in LL, but we can do better by adding tail to structure of node
+                            # in order to find the tail: O(1) in the new implementation because just need to change teh tail.next, and then tail
 ```

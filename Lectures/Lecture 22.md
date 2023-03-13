@@ -90,6 +90,7 @@ class LLQueue:
   def __init__(self):
     self.data = linkedlist.LinkedList()
     slef.tail = None
+    # we added the tail to the LL, so that when it is initialized and every time we append, the tail is updated
     
   def dequeue(self):
     ret_val = self.data.head.value

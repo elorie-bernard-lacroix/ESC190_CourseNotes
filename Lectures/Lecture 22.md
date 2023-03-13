@@ -82,9 +82,7 @@ class Queue:
 another implementation
 
 ```python
-import linkedlist
-
-# HEAD 
+import linkedlist 
 
 class LLQueue:
   def __init__(self):

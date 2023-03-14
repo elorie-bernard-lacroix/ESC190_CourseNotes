@@ -6,5 +6,6 @@ int main(){
   char x = 500;
   if(x==500) printf("This is true.\n");
   else  printf("I don't think so!\n");
+  return 1;
 
 }

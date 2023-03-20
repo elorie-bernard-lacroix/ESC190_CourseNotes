@@ -69,9 +69,6 @@ if __name__ == '__main__':
     s2.enqueue(3)
     s2.enqueue(8)
 
-    print(s1.__lt__(s2))
-
-    # Question 3
-    
+    print(s1.__lt__(s1))
     
 

@@ -1,0 +1,50 @@
+# Lecture 34
+
+Exam:
+* will look at projects and labs and the breakdown of python vs. C will be similar
+* there will be something like Q0 and maybe Q5 and stuff in between
+* if you are able to do the labs from scratch, you should be set
+
+## More about Dijsktra's Algorithm
+
+alorithm in pseudocode
+```python
+Dijkstra(G = (V, E), source)
+    S = {} # S is the set of explored nodes
+    pq = (0, source)
+    while pq is not empty
+        if cur_node in S
+            continue
+        cur_dist, cur_node = pq.pop()
+        d(cur_node) = cur_dist
+        add cur_node to S
+        for each neighbour v of cur_node
+            pq.push((cud_dist + |(v, cur_dist|), v)
+```
+
+
+Greedy best-first search:
+* know it has to go in some general direction (uses euclidean distance)
+
+
+## A* Algorithm
+* combines Dijkstra's algorithm with greedy best-first search
+
+
+pseudocode:
+```txt
+A*(G = (V, E), source, dest)
+    S = {} # S is the set of explored nodes
+    pq = (h(source), 0, source)
+    while pq is not empty
+        if cur_node in S
+            continue
+    cur_node, cur_priority, cur_dist = pq.pop()
+    d(cur_node) = cur_dist
+    add cur_node to S
+    for each neighbour v of cur_node
+        dist = cur_dist + |(v, cur_dist|
+        pq.push(h(v)+dist, dist, v)
+```
+
+* same as disjkstra's algorithm, but with a priority queue (h(v) + dist)
